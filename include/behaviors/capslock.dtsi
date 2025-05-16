@@ -1,0 +1,94 @@
+/*
+ * Copyright (c) 2025 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    behaviors {
+        /omit-if-no-ref/ capslock_on: cplkon {
+            compatible = "zmk,behavior-capslock";
+            #binding-cells = <0>;
+            capslock-press-duration = <5>;
+            enable-on-press;
+        };
+
+        /omit-if-no-ref/ capslock_off: cplkoff {
+            compatible = "zmk,behavior-capslock";
+            #binding-cells = <0>;
+            capslock-press-duration = <5>;
+            disable-on-release;
+        };
+
+        /omit-if-no-ref/ capslock_hold: cplkhld {
+            compatible = "zmk,behavior-capslock";
+            #binding-cells = <0>;
+            capslock-press-duration = <5>;
+            enable-on-press;
+            disable-on-release;
+        };
+
+        /omit-if-no-ref/ capslock_word: cplkwrd {
+            compatible = "zmk,behavior-capslock";
+            #binding-cells = <0>;
+            capslock-press-duration = <5>;
+            enable-on-press;
+            disable-on-next-release;
+            disable-on-keys = <SPACE TAB ENTER>;
+        };
+
+        /omit-if-no-ref/ capslock_line: cplkln {
+            compatible = "zmk,behavior-capslock";
+            #binding-cells = <0>;
+            capslock-press-duration = <5>;
+            enable-on-press;
+            disable-on-next-release;
+            disable-on-keys = <ENTER>;
+        };
+
+        /* MacOS compatibility (longer capslock press) */
+
+        /omit-if-no-ref/ capslock_on_mac: cplkon2 {
+            compatible = "zmk,behavior-capslock";
+            #binding-cells = <0>;
+            capslock-press-duration = <95>;
+            enable-on-press;
+        };
+
+        /omit-if-no-ref/ capslock_off_mac: cplkoff2 {
+            compatible = "zmk,behavior-capslock";
+            #binding-cells = <0>;
+            capslock-press-duration = <95>;
+            disable-on-release;
+        };
+
+        /omit-if-no-ref/ capslock_hold_mac: cplkhld2 {
+            compatible = "zmk,behavior-capslock";
+            #binding-cells = <0>;
+            capslock-press-duration = <95>;
+            enable-on-press;
+            disable-on-release;
+        };
+
+        /omit-if-no-ref/ capslock_word_mac: cplkwrd2 {
+            compatible = "zmk,behavior-capslock";
+            #binding-cells = <0>;
+            capslock-press-duration = <95>;
+            enable-on-press;
+            disable-on-next-release;
+            disable-on-keys = <SPACE TAB ENTER>;
+        };
+
+        /omit-if-no-ref/ capslock_line_mac: cplkln2 {
+            compatible = "zmk,behavior-capslock";
+            #binding-cells = <0>;
+            capslock-press-duration = <95>;
+            enable-on-press;
+            disable-on-next-release;
+            disable-on-keys = <ENTER>;
+        };
+
+    };
+};
