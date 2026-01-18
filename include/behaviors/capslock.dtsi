@@ -8,86 +8,126 @@
 
 / {
     behaviors {
-        /omit-if-no-ref/ capslock_on: cplkon {
+        #if ZMK_BEHAVIOR_OMIT(CAPSLOCK_ON)
+        /omit-if-no-ref/
+        #endif
+        capslock_on: cplkon {
             compatible = "zmk,behavior-capslock";
             #binding-cells = <0>;
             capslock-press-duration = <5>;
             enable-on-press;
+            display-name = "Capslock on";
         };
 
-        /omit-if-no-ref/ capslock_off: cplkoff {
+        #if ZMK_BEHAVIOR_OMIT(CAPSLOCK_OFF)
+        /omit-if-no-ref/
+        #endif
+        capslock_off: cplkoff {
             compatible = "zmk,behavior-capslock";
             #binding-cells = <0>;
             capslock-press-duration = <5>;
             disable-on-release;
+            display-name = "Capslock off";
         };
 
-        /omit-if-no-ref/ capslock_hold: cplkhld {
+        #if ZMK_BEHAVIOR_OMIT(CAPSLOCK_HOLD)
+        /omit-if-no-ref/
+        #endif
+        capslock_hold: cplkhld {
             compatible = "zmk,behavior-capslock";
             #binding-cells = <0>;
             capslock-press-duration = <5>;
             enable-on-press;
             disable-on-release;
+            display-name = "Capslock hold";
         };
 
-        /omit-if-no-ref/ capslock_word: cplkwrd {
+        #if ZMK_BEHAVIOR_OMIT(CAPSLOCK_WORD)
+        /omit-if-no-ref/
+        #endif
+        capslock_word: cplkwrd {
             compatible = "zmk,behavior-capslock";
             #binding-cells = <0>;
             capslock-press-duration = <5>;
             enable-on-press;
             disable-on-next-release;
             disable-on-keys = <SPACE TAB ENTER>;
+            display-name = "Capslock word";
         };
 
-        /omit-if-no-ref/ capslock_line: cplkln {
+        #if ZMK_BEHAVIOR_OMIT(CAPSLOCK_LINE)
+        /omit-if-no-ref/
+        #endif
+        capslock_line: cplkln {
             compatible = "zmk,behavior-capslock";
             #binding-cells = <0>;
             capslock-press-duration = <5>;
             enable-on-press;
             disable-on-next-release;
             disable-on-keys = <ENTER>;
+            display-name = "Capslock line";
         };
 
         /* MacOS compatibility (longer capslock press) */
 
-        /omit-if-no-ref/ capslock_on_mac: cplkon2 {
+        #if ZMK_BEHAVIOR_OMIT(CAPSLOCK_ON_MAC)
+        /omit-if-no-ref/
+        #endif
+        capslock_on_mac: cplkon2 {
             compatible = "zmk,behavior-capslock";
             #binding-cells = <0>;
             capslock-press-duration = <95>;
             enable-on-press;
+            display-name = "Capslock on (Mac)";
         };
 
-        /omit-if-no-ref/ capslock_off_mac: cplkoff2 {
+        #if ZMK_BEHAVIOR_OMIT(CAPSLOCK_OFF_MAC)
+        /omit-if-no-ref/
+        #endif
+        capslock_off_mac: cplkoff2 {
             compatible = "zmk,behavior-capslock";
             #binding-cells = <0>;
             capslock-press-duration = <95>;
             disable-on-release;
+            display-name = "Capslock off (Mac)";
         };
 
-        /omit-if-no-ref/ capslock_hold_mac: cplkhld2 {
+        #if ZMK_BEHAVIOR_OMIT(CAPSLOCK_HOLD_MAC)
+        /omit-if-no-ref/
+        #endif
+        capslock_hold_mac: cplkhld2 {
             compatible = "zmk,behavior-capslock";
             #binding-cells = <0>;
             capslock-press-duration = <95>;
             enable-on-press;
             disable-on-release;
+            display-name = "Capslock hold (Mac)";
         };
 
-        /omit-if-no-ref/ capslock_word_mac: cplkwrd2 {
+        #if ZMK_BEHAVIOR_OMIT(CAPSLOCK_WORD_MAC)
+        /omit-if-no-ref/
+        #endif
+        capslock_word_mac: cplkwrd2 {
             compatible = "zmk,behavior-capslock";
             #binding-cells = <0>;
             capslock-press-duration = <95>;
             enable-on-press;
             disable-on-next-release;
             disable-on-keys = <SPACE TAB ENTER>;
+            display-name = "Capslock word (Mac)";
         };
 
-        /omit-if-no-ref/ capslock_line_mac: cplkln2 {
+        #if ZMK_BEHAVIOR_OMIT(CAPSLOCK_LINE_MAC)
+        /omit-if-no-ref/
+        #endif
+        capslock_line_mac: cplkln2 {
             compatible = "zmk,behavior-capslock";
             #binding-cells = <0>;
             capslock-press-duration = <95>;
             enable-on-press;
             disable-on-next-release;
             disable-on-keys = <ENTER>;
+            display-name = "Capslock line (Mac)";
         };
 
     };
